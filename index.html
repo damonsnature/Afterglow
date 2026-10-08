@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#171914">
+    <meta name="description" content="Find the weather, local time, and memorable places near your next destination.">
+    <title>Afterglow | A field guide for wherever you land</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Afterglow home">
+          <span class="brand-mark" aria-hidden="true"><span></span></span>
+          <span>AFTERGLOW</span>
+        </a>
+        <span class="top-note"><span class="status-dot"></span> A little field guide for fall</span>
+      </header>
+
+      <main>
+        <section class="intro" aria-labelledby="page-title">
+          <div class="intro-copy">
+            <p class="eyebrow"><span class="eyebrow-rule"></span> YOUR NEXT LITTLE ADVENTURE</p>
+            <h1 id="page-title">Somewhere<br><em>in the season.</em></h1>
+            <p class="lede">A forecast, a local hour, and a few good reasons to wander.</p>
+          </div>
+          <div class="moon-scene" aria-hidden="true">
+            <span class="moon"></span><span class="moon-haze"></span>
+            <span class="scene-ridge ridge-back"></span><span class="scene-ridge ridge-front"></span>
+            <span class="scene-tree tree-one">♠</span><span class="scene-tree tree-two">♠</span>
+            <span class="scene-star star-one">✦</span><span class="scene-star star-two">✦</span>
+          </div>
+        </section>
+
+        <form class="searchbar" id="search-form">
+          <label class="sr-only" for="destination">Destination</label>
+          <span class="search-icon" aria-hidden="true"></span>
+          <input id="destination" name="destination" autocomplete="off" placeholder="Try a ZIP code, Mount Wilson, or anywhere else" required>
+          <button class="search-button" type="submit"><span>Find my forecast</span><span aria-hidden="true">↗</span></button>
+        </form>
+        <p class="search-hint">POSTAL CODE, LANDMARK, OR PLACE NAME <span>·</span> NO CITY/STATE REQUIRED</p>
+
+        <div class="notice" id="notice" role="status" aria-live="polite" hidden></div>
+
+        <section class="results" id="results" aria-live="polite" hidden>
+          <div class="location-heading">
+            <div>
+              <p class="eyebrow"><span class="eyebrow-rule"></span> RIGHT HERE, RIGHT NOW</p>
+              <h2 id="location-name"></h2>
+              <p class="location-detail" id="location-detail"></p>
+            </div>
+            <div class="local-clock">
+              <span class="clock-label">LOCAL TIME</span>
+              <strong id="local-time">--:--</strong>
+              <span id="local-date"></span>
+            </div>
+          </div>
+
+          <div class="dashboard">
+            <article class="weather-panel" aria-label="Current weather">
+              <div class="weather-topline"><span class="panel-kicker">THE WEATHER OUT THERE</span><span class="weather-symbol" id="weather-symbol" aria-hidden="true">☁</span></div>
+              <p class="weather-condition" id="weather-condition">Gathering the forecast...</p>
+              <div class="temperature"><span id="temperature">--</span><span class="degree">°</span><span class="unit">F</span></div>
+              <p class="feels-like" id="feels-like">Feels like --°</p>
+              <div class="weather-divider"></div>
+              <div class="weather-stats">
+                <div><span>HUMIDITY</span><strong id="humidity">--%</strong></div>
+                <div><span>WIND</span><strong id="wind">-- mph</strong></div>
+                <div><span>SUNSET</span><strong id="sunset">--:--</strong></div>
+              </div>
+              <p class="weather-source">Current conditions · Open-Meteo</p>
+            </article>
+
+            <section class="attractions-panel" aria-labelledby="attractions-title">
+              <div class="attractions-heading">
+                <div>
+                  <p class="panel-kicker">A FEW STOPS WORTH MAKING</p>
+                  <h3 id="attractions-title">Near your coordinates<span class="heading-period">.</span></h3>
+                </div>
+                <span class="nearby-label" id="nearby-label">NEARBY</span>
+              </div>
+              <div class="attraction-list" id="attraction-list"></div>
+              <p class="attractions-source" id="attraction-source">Places from OpenStreetMap contributors</p>
+            </section>
+          </div>
+        </section>
+
+        <section class="empty-state" id="empty-state" aria-label="Start exploring">
+          <div class="empty-orbit" aria-hidden="true"><span>✳</span></div>
+          <p class="empty-title">Where should we wander?</p>
+          <p class="empty-copy">Enter a place above to find its local forecast and nearby points of interest.</p>
+          <button class="example-button" type="button" data-destination="Mount Wilson">Try Mount Wilson <span aria-hidden="true">↗</span></button>
+        </section>
+
+        <footer class="footer"><span>MADE FOR CRISP-AIR DAYS &amp; EARLY SUNSETS</span><span>WEATHER BY OPEN-METEO <span class="footer-separator">·</span> PLACES BY OPENSTREETMAP &amp; WIKIDATA</span></footer>
+      </main>
+    </div>
+  </body>
+</html>
